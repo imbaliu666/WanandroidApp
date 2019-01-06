@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="grey_153153153">#999999</color>
+    <color name="v_create_item_rule">#E5E5E5</color>
+    <color name="v_create_vfamily_name">#5468EC</color>
+    <color name="blue_9134240">#0986F0</color>
+    <color name="black_515151">#333333</color>
+    <color name="blue_84104236">#5468EC</color>
+    <color name="grey_102102102">#666666</color>
+    <color name="red_FF6666">#FF6666</color>
+    <color name="add_contact_center_bg">#7f5468ec</color>
+    <color name="red_249109109">#F96D6D</color>
+    <color name="white_255255255">#FFFFFF</color>
+    <color name="blue_5468EC">#5468EC</color>
+    <color name="bule_31137245">#1F89F5</color>
+    <color name="v_white_245244249">#f5f4f9</color>
+    <color name="green">#2bb792</color>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:background="@drawable/title">
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/personal_img"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:civ_border_color="@color/white_255255255"
+            app:civ_border_width="1dp"
+            android:src="@mipmap/ic_launcher_round"/>
+
+        <TextView
+            android:text="阿里首席Android架构师"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/persion_note"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="@color/v_create_item_rule"
+        android:drawableStart="@mipmap/ic_launcher"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="笔记本"/>
+
+
+
+</LinearLayout>

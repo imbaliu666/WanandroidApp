@@ -7,17 +7,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
-import com.example.imbaliu.wanandroidapp.Bean.Data;
+import com.didichuxing.doraemonkit.DoraemonKit;
 import com.example.imbaliu.wanandroidapp.Database.DatabaseHelper;
 import com.example.imbaliu.wanandroidapp.Event.BitmapEvent;
 import com.example.imbaliu.wanandroidapp.Fragment.ClassificationFragment;
 import com.example.imbaliu.wanandroidapp.Fragment.MainFragment;
 import com.example.imbaliu.wanandroidapp.Fragment.PublicNumFragment;
-import com.example.imbaliu.wanandroidapp.Httpserver.HttpUtils;
+import com.example.imbaliu.wanandroidapp.Fragment.RobotFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -28,9 +27,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import rx.internal.schedulers.NewThreadWorker;
 
 
 public class MainActivity extends BaseActivity {
@@ -63,6 +59,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        DoraemonKit.install(getApplication());
+
         EventBus.getDefault().register(this);
         initView();
         initTablayout();
@@ -70,30 +68,15 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    private void initDataBase() {
-        DatabaseHelper dbhelper =new DatabaseHelper(this,DatabaseHelper.NOTEBOOK,null,1);
-        dbhelper.getWritableDatabase();
-    }
-
-    @OnClick(R.id.profile_image)
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.profile_image:
-                contentView.openDrawer(Gravity.START);
-                break;
-                default:
-                    break;
-        }
-    }
-
-
     private void initView() {
         fragments.add(new MainFragment());
         fragments.add(new PublicNumFragment());
         fragments.add(new ClassificationFragment());
+        fragments.add(new RobotFragment());
         mList.add("首页");
         mList.add("公众号");
         mList.add("体系");
+        mList.add("赖赖");
 
     }
 
@@ -135,18 +118,33 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-
     }
 
-    @Subscribe
-    public void onEvent(BitmapEvent bitmapEvent) {
-        profileimage.setImageBitmap(bitmapEvent.getBitmap());
-
+    private void initDataBase() {
+        DatabaseHelper dbhelper = new DatabaseHelper(this, DatabaseHelper.NOTEBOOK, null, 1);
+        dbhelper.getWritableDatabase();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+    }
+
+    @OnClick(R.id.profile_image)
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.profile_image:
+                contentView.openDrawer(Gravity.START);
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Subscribe
+    public void onEvent(BitmapEvent bitmapEvent) {
+        profileimage.setImageBitmap(bitmapEvent.getBitmap());
+
     }
 }

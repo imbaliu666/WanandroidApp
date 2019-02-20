@@ -4,6 +4,8 @@ import com.example.imbaliu.wanandroidapp.Bean.ClassificationData.ChildrenTitle;
 import com.example.imbaliu.wanandroidapp.Bean.ClassificationData.ClassData;
 import com.example.imbaliu.wanandroidapp.Bean.Data;
 import com.example.imbaliu.wanandroidapp.Bean.PubData.Author;
+import com.example.imbaliu.wanandroidapp.Bean.Robot.RobotRequest;
+import com.example.imbaliu.wanandroidapp.Bean.Robot.RobotResponse;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -28,6 +30,7 @@ public class HttpUtils {
 
 
     private final static String url ="http://www.wanandroid.com/";
+    private final static String roboturl ="http://openapi.tuling123.com/";
 
     /**
      * 首页
@@ -82,6 +85,23 @@ public class HttpUtils {
 
         Apiserver request = retrofit.create(Apiserver.class);
         io.reactivex.Observable<ClassData> call = request.getClassData(urlress);
+        call.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
+
+    }
+    /**
+     * 机器人
+     */
+    public static void requestRobot(RobotRequest robotRequest,Observer<RobotResponse> observer){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(roboturl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+
+        Apiserver request = retrofit.create(Apiserver.class);
+        io.reactivex.Observable<RobotResponse> call = request.getRobot("openapi/api/v2",robotRequest);
         call.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);

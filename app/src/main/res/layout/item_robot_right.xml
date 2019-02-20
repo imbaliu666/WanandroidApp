@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:id="@+id/item_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:src="@drawable/assistant" />
+
+    <TextView
+        android:id="@+id/left_text"
+        android:background="@drawable/chat_bg_cloud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textColor="@color/white_255255255"
+        android:text="暗室逢灯"/>
+    </LinearLayout>
+<LinearLayout
+    android:id="@+id/item_right"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:gravity="center_vertical"
+    android:visibility="gone"
+    >
+    <TextView
+        android:id="@+id/right_text"
+        android:background="@drawable/chat_bg_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textColor="@color/white_255255255"
+        android:text="暗室\fasdfads"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:src="@drawable/user" />
+</LinearLayout>
+
+
+</RelativeLayout>

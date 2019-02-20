@@ -3,9 +3,12 @@ package com.example.imbaliu.wanandroidapp.Httpserver;
 import com.example.imbaliu.wanandroidapp.Bean.ClassificationData.ClassData;
 import com.example.imbaliu.wanandroidapp.Bean.Data;
 import com.example.imbaliu.wanandroidapp.Bean.PubData.Author;
+import com.example.imbaliu.wanandroidapp.Bean.Robot.RobotRequest;
+import com.example.imbaliu.wanandroidapp.Bean.Robot.RobotResponse;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Url;
@@ -39,4 +42,9 @@ public interface Apiserver {
      */
     @GET()
     Observable<ClassData> getClassData(@Url String url);
+    /**
+     * 机器人
+     */
+    @POST()
+    Observable<RobotResponse> getRobot(@Url String url, @Body RobotRequest request);
 }

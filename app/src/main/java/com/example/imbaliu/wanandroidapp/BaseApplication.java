@@ -2,6 +2,8 @@ package com.example.imbaliu.wanandroidapp;
 
 import android.app.Application;
 
+import com.didichuxing.doraemonkit.DoraemonKit;
+
 /**
  * 项目名： wanandroid
  * 包名：   com.example.imbaliu.wanandroidapp
@@ -16,5 +18,8 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        DoraemonKit.install(this);
+
+
     }
 }

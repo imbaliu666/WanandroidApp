@@ -23,7 +23,7 @@
             android:src="@mipmap/ic_launcher_round"/>
 
         <TextView
-            android:text="阿里首席Android架构师"
+            android:text="发际线很低的码农"
             android:gravity="center_vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -43,6 +43,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="笔记本"/>
+
+    <TextView
+        android:id="@+id/run_ball"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重力感应"
+        android:textSize="20dp"
+        android:textColor="@color/v_create_item_rule"
+        />
 
 
 

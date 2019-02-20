@@ -54,7 +54,6 @@ public class SignatureActivity extends BaseActivity {
                 finish();
                 break;
 
-
             default:
                     break;
 

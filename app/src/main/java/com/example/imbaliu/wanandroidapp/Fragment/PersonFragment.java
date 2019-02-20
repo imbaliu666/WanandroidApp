@@ -10,6 +10,7 @@ import com.example.imbaliu.wanandroidapp.Event.BitmapEvent;
 import com.example.imbaliu.wanandroidapp.NoteBook.NoteBookActivity;
 import com.example.imbaliu.wanandroidapp.R;
 import com.example.imbaliu.wanandroidapp.SignatureActivity;
+import com.example.imbaliu.wanandroidapp.SurfaceViewAcitvity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -34,6 +35,9 @@ public class PersonFragment extends BaseFragment {
     @BindView(R.id.persion_note)
     TextView persionNote;
 
+    @BindView(R.id.run_ball)
+    TextView runBall;
+
     @Override
     public int onGetLayout() {
         return R.layout.fragment_person;
@@ -45,7 +49,7 @@ public class PersonFragment extends BaseFragment {
         EventBus.getDefault().register(this);
     }
 
-    @OnClick({R.id.personal_img,R.id.persion_note})
+    @OnClick({R.id.personal_img,R.id.persion_note,R.id.run_ball})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.personal_img:
@@ -54,6 +58,9 @@ public class PersonFragment extends BaseFragment {
             case R.id.persion_note:
                 Intent intent =new Intent(getActivity(), NoteBookActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.run_ball:
+                startActivity(new Intent(getActivity(), SurfaceViewAcitvity.class));
                 break;
 
             default:

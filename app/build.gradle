@@ -51,5 +51,9 @@ dependencies {
     //侧滑删除
     implementation  'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
 
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:1.0.5'
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:1.0.5'
+
+
 
 }

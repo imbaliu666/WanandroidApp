@@ -14,3 +14,6 @@
 
 ![image](https://github.com/imbaliu666/WanandroidApp/blob/master/photo3.png)
 
+新添加了智能机器人
+
+![image](https://github.com/imbaliu666/WanandroidApp/blob/master/robot.PNG)
